@@ -1,0 +1,8 @@
+10               |    10          |    10             |    Disponible     |    N/A
+10               |    100         |    100            |    Disponible     |    N/A
+10               |    100         |    100            |    Disponible     |    N/A
+1                |    100         |    200            |    Vendu          |    baha
+1                |    100         |    200            |    Vendu          |    baha
+1                |    100         |    100            |    Disponible     |    N/A
+1                |    1           |    1              |    Disponible     |    N/A
+1                |    100         |    100            |    Disponible     |    N/A
