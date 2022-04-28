@@ -5,7 +5,8 @@ from threading import Timer
 from datetime import datetime
 import select,time,threading
 import os
- 
+import csv
+  
 auction = False
 reference= "test"
 bidder =""
@@ -116,44 +117,41 @@ class menu(object):
             # More statements comes here
             if not auction :
                 print(" ***** Soukra Bank ***** ")
-                print("1- Accounts list")
-                print("2- Accounts bills ")
+                print("1- Account details ")
+                print("2- Account bill ")
                 print("3- History of transactions ")
                 print("4- Exit")
                 reponse = input()
                 if (reponse =="1"):
-                   s = ''
-                   print("Account Reference to list : 2")
-                   ref = input(">> ")
-                   s.send(b"ref"+ref.encode())
-                   return("liste,"+ref)
+                    ach =""
+                    ach = input("Client reference : ")
+                    compt = open("comptes.txt","r")
+                    l = compt.readlines()
+                    print("Reference   	Valeur  	Etat	       Plafond Debit")
+                    for i in l :
+                        if i.split(" ")[0] == ach :
+                            print(i)
+                    compt.close()
                 elif (reponse=="2"):
                     ach =""
-                    ach = input("Client Name : ")
+                    ach = input("Client reference : ")
                     fact = open("factures.txt","r")
                     l = fact.readlines()
-                    print("Client Name                Amount")
+                    print("Client reference           Amount")
                     for i in l :
                         if i.split(" ")[0] == ach :
                             print(i)
                     fact.close()
                 elif (reponse=="3"):
-                     histo = open("histo.xlsx","r")
+                     histo = open("histo.txt","r")
                      l = histo.readlines()
                      for i in l :
                         print(i)
                  
                 elif (reponse=="4"):
-                    ach =""
-                    ach = input("Veuillez entrer le nom de l'acheteur")
-                    fact = open("factures.txt","r")
-                    l = fact.readlines()
-                    for i in l :
-                        if i.split(" ")[0] == ach :
-                            print(i)
-                    fact.close()
-                elif (reponse=="4"):
-                      os._exit(0) #interaction avec le sys des fichiers 
+                     os._exit(0) #
+                   
+            
                 else:
                     print("Wrong value")
  

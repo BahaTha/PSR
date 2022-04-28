@@ -1,0 +1,7 @@
+Référence Compte,Transaction,Valeur,Résultat,Etat
+1000,Retrait,200,échec,Négatif
+2000,Retrait,300,succés,Positif
+1000,Retrait,100,succés,Négatif
+2000,Ajout,450,succés,Positif
+3000,Ajout,1000,succés,Positif
+4000,Ajout,700,succés,Négatif

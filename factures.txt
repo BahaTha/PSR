@@ -1,2 +1,5 @@
-ClientName                 Amount
-baha                       400
+Reference            	Amount_To_Pay  	
+1000 	                   500	       
+2000	                   300   	     	         
+3000	                   950	        
+4000	                   800      	         
