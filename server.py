@@ -119,11 +119,11 @@ class menu(object):
                 print("1- Accounts list")
                 print("2- Accounts bills ")
                 print("3- History of transactions ")
-                print("4- Quitter")
+                print("4- Exit")
                 reponse = input()
                 if (reponse =="1"):
                    s = ''
-                   print("Donner la reference du compte a lister")
+                   print("Account Reference to list : 2")
                    ref = input(">> ")
                    s.send(b"ref"+ref.encode())
                    return("liste,"+ref)
@@ -132,17 +132,18 @@ class menu(object):
                     ach = input("Client Name : ")
                     fact = open("factures.txt","r")
                     l = fact.readlines()
+                    print("Client Name                Amount")
                     for i in l :
                         if i.split(" ")[0] == ach :
                             print(i)
                     fact.close()
                 elif (reponse=="3"):
-                    histo = open("histo.txt","r")
-                    l = histo.readlines()
-                    for i in l :
+                     histo = open("histo.xlsx","r")
+                     l = histo.readlines()
+                     for i in l :
                         print(i)
-                    histo.close()
-                elif (reponse=="3"):
+                 
+                elif (reponse=="4"):
                     ach =""
                     ach = input("Veuillez entrer le nom de l'acheteur")
                     fact = open("factures.txt","r")

@@ -1,24 +1,7 @@
-------------------
-Produit 10 :
-------------------
-Produit 10 :
-------------------
-Produit 4  :
-------------------
-Produit 10  :
-------------------
-Produit 1 :
-baha                |    200         |    succes
-------------------
-Produit 1 :
-baha                |    200         |    succes
-------------------
-Produit 1 :
-------------------
-Produit 1 :
-------------------
-Produit 1 :
-------------------
-Produit 1 :
-------------------
-Produit 1 :
+Reference Compte	Transaction	  Valeur	Resultat	Etat
+1000	            Retrait        200      echec	    Negatif
+2000             	Retrait	       300	    succes	    Positif
+1000	            Retrait	       100	    succes	    Negatif
+2000	            Ajout	       450	    succes	    Positif
+3000	            Ajout         1000      succes	    Positif
+4000	            Ajout	       700	    succes	    Negatif
