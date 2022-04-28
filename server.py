@@ -125,28 +125,38 @@ class menu(object):
                 if (reponse =="1"):
                     ach =""
                     ach = input("Client reference : ")
+                    with open('comptes.txt', mode='r') as csv_file:
+                        csv_reader = csv.DictReader(csv_file)
+                        line_count = 0
+                        for row in csv_reader:
+                            if row["Reference"] == ach :
+                             print(f' {(row)}')        
+                
+                    """ach =""
+                    ach = input("Client reference : ")
                     compt = open("comptes.txt","r")
                     l = compt.readlines()
                     print("Reference   	Valeur  	Etat	       Plafond Debit")
                     for i in l :
                         if i.split(" ")[0] == ach :
                             print(i)
-                    compt.close()
+                    compt.close()"""
                 elif (reponse=="2"):
                     ach =""
                     ach = input("Client reference : ")
-                    fact = open("factures.txt","r")
-                    l = fact.readlines()
-                    print("Client reference           Amount")
-                    for i in l :
-                        if i.split(" ")[0] == ach :
-                            print(i)
-                    fact.close()
+                    with open('factures.txt', mode='r') as csv_file:
+                        csv_reader = csv.DictReader(csv_file)
+                        line_count = 0
+                        for row in csv_reader:
+                            if row["Reference"] == ach : 
+                             print(f' {(row)}')        
+                        
+                   
                 elif (reponse=="3"):
-                     histo = open("histo.txt","r")
-                     l = histo.readlines()
-                     for i in l :
-                        print(i)
+                     with open('histo.txt', mode='r') as csv_file:
+                        csv_reader = csv.DictReader(csv_file)
+                        for row in csv_reader:
+                             print(f' {(row)}')  
                  
                 elif (reponse=="4"):
                      os._exit(0) #
@@ -266,13 +276,7 @@ def diffuserj(msg, prefix=""):
             sock.send(bytes(prefix, "utf8")+msg)
  
  
-#fonction qui retourne True si un client a rejoint la vente
-def joined(nom):
-    global joins
-    for i in joins:
-        if i==nom:
-            return True
-    return False
+
 #fonction qui ajout un client a la liste des client joints
 def add(nom):
     global joins
@@ -375,7 +379,7 @@ addresses = {}
  
  
 
-HOST = '192.168.1.9'
+HOST = '192.168.1.1'
 PORT = 50000
 BUFSIZ = 1024 #Nombre de bits par message 
 ADDR = (HOST, PORT)
